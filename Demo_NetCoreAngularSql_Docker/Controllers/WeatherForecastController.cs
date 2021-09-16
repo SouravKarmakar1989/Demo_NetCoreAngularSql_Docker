@@ -31,7 +31,30 @@ namespace Demo_NetCoreAngularSql_Docker.Controllers
             {
                 Date = DateTime.Now.AddDays(index),
                 TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
+                Summary = Summaries[rng.Next(Summaries.Length)],
+                Entities = new List<Entity>
+                {
+                    new Entity
+                    {
+                        Id = Guid.NewGuid(),
+                        Name= "Incident"
+                    },
+                    new Entity
+                    {
+                        Id = Guid.NewGuid(),
+                        Name= "Problem"
+                    },
+                    new Entity
+                    {
+                        Id = Guid.NewGuid(),
+                        Name= "Change"
+                    },
+                    new Entity
+                    {
+                        Id = Guid.NewGuid(),
+                        Name= "Project"
+                    }
+                }
             })
             .ToArray();
         }

@@ -2,10 +2,10 @@ import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-fetch-data',
-  templateUrl: './fetch-data.component.html'
+  selector: 'app-itil-tool',
+  templateUrl: './itil-tool.component.html'
 })
-export class FetchDataComponent {
+export class ItilToolComponent {
   public forecasts: WeatherForecast[];
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
@@ -20,9 +20,10 @@ interface WeatherForecast {
   temperatureC: number;
   temperatureF: number;
   summary: string;
-  hello: Hello;
+  entities: Entity;
 }
 
-interface Hello {
+interface Entity {
+  id: string;
   name: string;
 }
